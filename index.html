@@ -1,227 +1,261 @@
-<!DOCTYPE html>
-<!-- * lone wolf, steady course | Matt Livingston -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AquaGearZone — Coming Soon</title>
-  <meta name="description" content="AquaGearZone: aquarium gear and supplies. Site under construction, check back soon.">
-  <!-- Placeholder page: remove noindex at launch -->
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#04192b">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2304192b'/%3E%3Cpath d='M32 12c8 12 14 19 14 27a14 14 0 0 1-28 0c0-8 6-15 14-27z' fill='%2339d0d8'/%3E%3C/svg%3E">
-  <style>
-    :root {
-      --deep: #020d18;
-      --mid: #04263f;
-      --shallow: #0a4a6b;
-      --aqua: #39d0d8;
-      --foam: #e6fbff;
-      --muted: #8fb8c9;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body { height: 100%; }
-
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: var(--foam);
-      background: linear-gradient(180deg, var(--shallow) 0%, var(--mid) 45%, var(--deep) 100%);
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* Light rays from the surface */
-    .rays {
-      position: absolute;
-      inset: -20% -10% auto;
-      height: 90%;
-      background:
-        repeating-linear-gradient(100deg,
-          transparent 0 60px,
-          rgba(230, 251, 255, 0.05) 60px 90px,
-          transparent 90px 160px);
-      mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
-      -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
-      animation: sway 14s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
-
-    @keyframes sway {
-      from { transform: translateX(-3%) skewX(-2deg); }
-      to   { transform: translateX(3%)  skewX(2deg); }
-    }
-
-    /* Rising bubbles */
-    .bubbles { position: absolute; inset: 0; pointer-events: none; }
-
-    .bubbles span {
-      position: absolute;
-      bottom: -40px;
-      border-radius: 50%;
-      border: 1px solid rgba(230, 251, 255, 0.35);
-      background: radial-gradient(circle at 30% 30%, rgba(230, 251, 255, 0.35), transparent 60%);
-      animation: rise linear infinite;
-    }
-
-    @keyframes rise {
-      0%   { transform: translate(0, 0); opacity: 0; }
-      10%  { opacity: 1; }
-      50%  { transform: translate(12px, -55vh); }
-      100% { transform: translate(-8px, -115vh); opacity: 0; }
-    }
-
-    /* Content */
-    main {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 2rem 1.5rem;
-      max-width: 40rem;
-    }
-
-    .mark {
-      display: block;
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 1.5rem;
-      color: var(--aqua);
-      filter: drop-shadow(0 0 18px rgba(57, 208, 216, 0.45));
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--aqua);
-      border: 1px solid rgba(57, 208, 216, 0.4);
-      border-radius: 999px;
-      padding: 0.4rem 0.9rem;
-      margin-bottom: 1.25rem;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 7vw, 4.25rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-    }
-
-    h1 .accent { color: var(--aqua); }
-
-    .lede {
-      margin-top: 1.25rem;
-      font-size: clamp(1rem, 2.4vw, 1.2rem);
-      line-height: 1.6;
-      color: var(--muted);
-    }
-
-    .contact {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .contact a {
-      color: var(--foam);
-      text-decoration: none;
-      border-bottom: 1px solid var(--aqua);
-      padding-bottom: 1px;
-    }
-
-    .contact a:hover,
-    .contact a:focus-visible { color: var(--aqua); }
-
-    footer {
-      position: absolute;
-      bottom: 1.25rem;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      text-align: center;
-      font-size: 0.8rem;
-      color: rgba(143, 184, 201, 0.7);
-    }
-
-    /* Seafloor wave */
-    .wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200%;
-      height: 90px;
-      color: rgba(2, 13, 24, 0.85);
-      animation: drift 18s linear infinite;
-      pointer-events: none;
-    }
-
-    @keyframes drift {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .rays, .wave, .bubbles span { animation: none; }
-      .bubbles { display: none; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AquaGearZone — Aquarium Equipment, Shrimp &amp; Aquascaping Gear</title>
+<meta name="description" content="Discover aquarium equipment for nano tanks, shrimp keeping and aquascaping — with clear specs, suitable setups, honest limitations and practical buying guides.">
+<link rel="canonical" href="https://aquagearzone.com/">
+<meta name="theme-color" content="#092B3C">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AquaGearZone">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="AquaGearZone — Aquarium Equipment, Shrimp &amp; Aquascaping Gear">
+<meta property="og:description" content="Discover aquarium equipment for nano tanks, shrimp keeping and aquascaping — with clear specs, suitable setups, honest limitations and practical buying guides.">
+<meta property="og:url" content="https://aquagearzone.com/">
+<meta property="og:image" content="https://aquagearzone.com/assets/images/photos/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A nature-style aquascape with driftwood and lush green plants">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AquaGearZone — Aquarium Equipment, Shrimp &amp; Aquascaping Gear">
+<meta name="twitter:description" content="Discover aquarium equipment for nano tanks, shrimp keeping and aquascaping — with clear specs, suitable setups, honest limitations and practical buying guides.">
+<meta name="twitter:image" content="https://aquagearzone.com/assets/images/photos/og-default.jpg">
+<meta name="twitter:image:alt" content="A nature-style aquascape with driftwood and lush green plants">
+<link rel="preload" href="assets/fonts/manrope-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/images/photos/hero-nature-aquascape-1200.webp" imagesrcset="assets/images/photos/hero-nature-aquascape-480.webp 480w, assets/images/photos/hero-nature-aquascape-800.webp 800w, assets/images/photos/hero-nature-aquascape-1200.webp 1200w, assets/images/photos/hero-nature-aquascape-1800.webp 1800w, assets/images/photos/hero-nature-aquascape-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
+<!-- Google Search Console: paste the HTML-tag verification meta here once the property is created, e.g. <meta name="google-site-verification" content="…"> -->
+<link rel="stylesheet" href="assets/css/main.css">
+<script>document.documentElement.classList.add('js')</script>
+<script type="module" src="assets/js/main.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://aquagearzone.com/#website","url":"https://aquagearzone.com/","name":"AquaGearZone","publisher":{"@id":"https://aquagearzone.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://aquagearzone.com/products/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://aquagearzone.com/#organization","name":"AquaGearZone","url":"https://aquagearzone.com/","logo":"https://aquagearzone.com/assets/images/logo.png"}]}</script>
 </head>
-<body>
-  <div class="rays" aria-hidden="true"></div>
-  <div class="bubbles" aria-hidden="true"></div>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="preview-bar" role="note"><div class="container"><span><strong>Prototype preview</strong> · Brands, products and retailer links shown are demonstration data.</span></div></div>
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="./" aria-label="AquaGearZone home"><svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20C7C7"/><stop offset=".55" stop-color="#087F8C"/><stop offset="1" stop-color="#092B3C"/></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lg-h)"/><path d="M20 7.5c-3.6 4.3-7.8 9.6-7.8 14.4a7.8 7.8 0 0 0 15.6 0c0-4.8-4.2-10.1-7.8-14.4Z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/><path d="M14.6 23.4c1.8-1.6 3.6-1.6 5.4 0s3.6 1.6 5.4 0" fill="none" stroke="#A9F0D6" stroke-width="2.2" stroke-linecap="round"/><circle cx="23.2" cy="16.6" r="1.6" fill="#fff"/></svg><span class="brand__name" aria-hidden="true">AquaGear<span>Zone</span></span></a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main">
+      <ul class="primary-nav__list">
+        <li class="has-menu" data-menu>
+          <button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-shop" data-menu-toggle>Shop gear <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="mega" id="menu-shop">
+            <ul class="mega__list">
+              <li><a class="mega__link" href="categories/nano-aquariums/"><img src="assets/images/photos/nano-cube-aquarium-thumb.webp" alt="" width="56" height="56" loading="lazy" decoding="async"><span><strong>Nano Aquariums</strong><span>Rimless tanks, lids and setup essentials</span></span></a></li>
+              <li><a class="mega__link" href="categories/shrimp-tank-essentials/"><img src="assets/images/photos/cherry-shrimp-carpet-thumb.webp" alt="" width="56" height="56" loading="lazy" decoding="async"><span><strong>Shrimp Tank Essentials</strong><span>Gentle filtration, acclimation and water monitoring</span></span></a></li>
+              <li><a class="mega__link" href="categories/aquascaping-tools/"><img src="assets/images/photos/planting-anubias-tweezers-thumb.webp" alt="" width="56" height="56" loading="lazy" decoding="async"><span><strong>Aquascaping Tools</strong><span>Tweezers, scissors, substrate and hardscape</span></span></a></li>
+              <li><a class="mega__link" href="categories/filtration-maintenance/"><img src="assets/images/photos/planted-tank-lily-pipes-thumb.webp" alt="" width="56" height="56" loading="lazy" decoding="async"><span><strong>Filtration &amp; Maintenance</strong><span>Filters, siphons, cleaners and test kits</span></span></a></li>
+              <li><a class="mega__link" href="categories/lighting-equipment/"><img src="assets/images/photos/planted-tank-led-pendants-thumb.webp" alt="" width="56" height="56" loading="lazy" decoding="async"><span><strong>Lighting &amp; Equipment</strong><span>LED lights, heaters, pumps and thermometers</span></span></a></li>
+            </ul>
+            <div class="mega__aside">
+              <div><p class="eyebrow" style="color:var(--aqua-300)">Buying guide</p><h3>Setting up a shrimp tank?</h3><p>Our checklist covers the filtration, testing and maintenance gear a 5-gallon setup actually needs.</p></div>
+              <a class="link-arrow" href="guides/5-gallon-shrimp-tank-equipment/">Read the guide</a>
+            </div>
+            <a class="mega__all" href="products/">Browse all products →</a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="products/">All products</a></li>
+        <li><a class="nav-link" href="guides/">Guides</a></li>
+        <li><a class="nav-link" href="about/">About</a></li>
+      </ul>
+    </nav>
+    <form class="header-search" id="header-search" role="search" action="products/" method="get" data-search>
+      <label class="sr-only" for="site-search">Search aquarium gear and guides</label>
+      <div class="input-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="site-search" name="q" type="search" placeholder="Search tweezers, filters, lights…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="site-search-list" aria-autocomplete="list"></div>
+      <ul class="search-suggest" id="site-search-list" role="listbox" aria-label="Search suggestions" hidden></ul>
+      <p class="sr-only" aria-live="polite" data-search-status></p>
+    </form>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" aria-label="Search" aria-expanded="false" aria-controls="header-search" data-search-toggle><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><svg data-icon-open viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h10"/></svg><svg data-icon-close hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
 
-  <main>
-    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-      <path fill="currentColor" d="M32 6c10 14 18 23 18 33a18 18 0 0 1-36 0c0-10 8-19 18-33z"/>
-      <path fill="#04192b" opacity="0.35" d="M24 40a8 8 0 0 0 8 8v4a12 12 0 0 1-12-12z"/>
-    </svg>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media"><img src="assets/images/photos/hero-nature-aquascape-1200.webp" srcset="assets/images/photos/hero-nature-aquascape-480.webp 480w, assets/images/photos/hero-nature-aquascape-800.webp 800w, assets/images/photos/hero-nature-aquascape-1200.webp 1200w, assets/images/photos/hero-nature-aquascape-1800.webp 1800w, assets/images/photos/hero-nature-aquascape-2400.webp 2400w" sizes="100vw" width="3840" height="2194" alt="A nature-style aquascape: driftwood, ferns and mosses rising above a planted aquarium, with small orchids at the top" fetchpriority="high" decoding="async"></div>
+  <div class="container">
+    <div class="hero__content">
+      <p class="hero__eyebrow"><b>Specialist</b> Nano tanks · Shrimp keeping · Aquascaping</p>
+      <h1 id="hero-title">Better Gear. <span>Healthier Aquariums.</span></h1>
+      <p class="hero__text">Discover carefully selected aquarium equipment, accessories, and practical guides for building an underwater world you'll love.</p>
+      <div class="hero__actions">
+        <a class="btn btn--aqua" href="products/">Explore Aquarium Gear <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost-light" href="guides/">Read Our Guides</a>
+      </div>
+      <div class="hero__quick">
+        <p id="quick-label">Popular starting points</p>
+        <ul class="chip-list" aria-labelledby="quick-label">
+          <li><a class="chip" href="categories/shrimp-tank-essentials/">Shrimp tank essentials</a></li>
+          <li><a class="chip" href="categories/aquascaping-tools/">Aquascaping tools</a></li>
+          <li><a class="chip" href="products/?setup=nano">Gear for nano tanks</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="hero__credit">Photo: Dileepkumardr, CC0 · <a href="image-credits/">Credits</a></p>
+</section>
 
-    <span class="eyebrow">Under Construction</span>
-    <h1>Aqua<span class="accent">Gear</span>Zone</h1>
-    <p class="lede">
-      Something new is surfacing. We're building a home for aquarium gear:
-      filters, lighting, heaters, and everything your tank needs to thrive.
-      Check back soon.
-    </p>
+<section class="trust-strip" aria-label="What AquaGearZone offers">
+  <div class="container">
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8" fill="currentColor"/></svg><span>Focused on nano, shrimp &amp; planted tanks</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/><path d="M6 8h1M6 11h1M17 8h1M17 11h1M6 14h1M17 14h1"/></svg><span>Specs, pros &amp; limitations side by side</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5M8 7h8M8 11h6"/></svg><span>Practical guides for real setups</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9.5 5.5 4h13L20 9.5M4 9.5V20h16V9.5M4 9.5c0 1.4 1.1 2.5 2.7 2.5S9.3 10.9 9.3 9.5c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5c0 1.4 1.1 2.5 2.6 2.5S20 10.9 20 9.5M10 20v-4.5h4V20"/></svg><span>Buy from established retailers</span></li>
+    </ul>
+  </div>
+</section>
 
-    <!-- Optional: uncomment and set a real address once one exists
-    <p class="contact">
-      Questions in the meantime? <a href="mailto:hello@aquagearzone.com">hello@aquagearzone.com</a>
-    </p>
-    -->
-  </main>
+<section class="section" aria-labelledby="cat-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">Shop by category</p><h2 id="cat-title">Everything for small, thriving tanks</h2><p>Five specialist categories built around nano aquariums, dwarf shrimp and planted aquascapes.</p></div>
+      <a class="link-arrow" href="categories/">All categories</a>
+    </div>
+    <ul class="category-grid reveal">
+      <li><a class="cat-card" href="categories/nano-aquariums/"><img src="assets/images/photos/nano-cube-aquarium-800.webp" srcset="assets/images/photos/nano-cube-aquarium-480.webp 480w, assets/images/photos/nano-cube-aquarium-800.webp 800w, assets/images/photos/nano-cube-aquarium-1200.webp 1200w" sizes="(min-width: 1024px) 620px, 100vw" width="3840" height="2571" alt="" loading="lazy" decoding="async"><div class="cat-card__text"><h3>Nano Aquariums</h3><p>Compact aquariums and the small but important pieces that go with them: leveling mats, lids and all-in-one kits sized for desks, shelves and countertops.</p></div><span class="cat-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="cat-card" href="categories/shrimp-tank-essentials/"><img src="assets/images/photos/cherry-shrimp-carpet-800.webp" srcset="assets/images/photos/cherry-shrimp-carpet-480.webp 480w, assets/images/photos/cherry-shrimp-carpet-800.webp 800w, assets/images/photos/cherry-shrimp-carpet-1200.webp 1200w" sizes="(min-width: 1024px) 310px, (min-width: 560px) 50vw, 100vw" width="3840" height="2550" alt="" loading="lazy" decoding="async"><div class="cat-card__text"><h3>Shrimp Tank Essentials</h3><p>Gentle filtration, acclimation and water monitoring</p></div><span class="cat-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="cat-card" href="categories/aquascaping-tools/"><img src="assets/images/photos/planting-anubias-tweezers-800.webp" srcset="assets/images/photos/planting-anubias-tweezers-480.webp 480w, assets/images/photos/planting-anubias-tweezers-800.webp 800w, assets/images/photos/planting-anubias-tweezers-1200.webp 1200w" sizes="(min-width: 1024px) 310px, (min-width: 560px) 50vw, 100vw" width="3840" height="2551" alt="" loading="lazy" decoding="async"><div class="cat-card__text"><h3>Aquascaping Tools</h3><p>Tweezers, scissors, substrate and hardscape</p></div><span class="cat-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="cat-card" href="categories/filtration-maintenance/"><img src="assets/images/photos/planted-tank-lily-pipes-800.webp" srcset="assets/images/photos/planted-tank-lily-pipes-480.webp 480w, assets/images/photos/planted-tank-lily-pipes-800.webp 800w, assets/images/photos/planted-tank-lily-pipes-1200.webp 1200w" sizes="(min-width: 1024px) 310px, (min-width: 560px) 50vw, 100vw" width="2048" height="1536" alt="" loading="lazy" decoding="async"><div class="cat-card__text"><h3>Filtration &amp; Maintenance</h3><p>Filters, siphons, cleaners and test kits</p></div><span class="cat-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="cat-card" href="categories/lighting-equipment/"><img src="assets/images/photos/planted-tank-led-pendants-800.webp" srcset="assets/images/photos/planted-tank-led-pendants-480.webp 480w, assets/images/photos/planted-tank-led-pendants-800.webp 800w, assets/images/photos/planted-tank-led-pendants-1200.webp 1200w" sizes="(min-width: 1024px) 310px, (min-width: 560px) 50vw, 100vw" width="3192" height="1920" alt="" loading="lazy" decoding="async"><div class="cat-card__text"><h3>Lighting &amp; Equipment</h3><p>LED lights, heaters, pumps and thermometers</p></div><span class="cat-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    </ul>
+  </div>
+</section>
 
-  <footer>&copy; <span id="yr">2026</span> AquaGearZone</footer>
+<section class="section section--white" aria-labelledby="featured-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">Featured equipment</p><h2 id="featured-title">Gear worth a closer look</h2><p>Hand-picked equipment for shrimp tanks, planted nanos and everyday maintenance — each with specs, suitable setups and honest limitations.</p></div>
+      <a class="link-arrow" href="products/">View all products</a>
+    </div>
+    <ul class="product-grid" id="featured-products" aria-busy="true" aria-label="Featured products">
+      <li aria-hidden="true"><div class="skeleton skeleton-card"></div></li><li aria-hidden="true"><div class="skeleton skeleton-card"></div></li><li aria-hidden="true"><div class="skeleton skeleton-card"></div></li><li aria-hidden="true"><div class="skeleton skeleton-card"></div></li><li aria-hidden="true"><div class="skeleton skeleton-card"></div></li><li aria-hidden="true"><div class="skeleton skeleton-card"></div></li><li aria-hidden="true"><div class="skeleton skeleton-card"></div></li><li aria-hidden="true"><div class="skeleton skeleton-card"></div></li>
+    </ul>
+    <noscript><p class="notice mt-2">Featured products need JavaScript. <a href="products/">Browse the product catalog</a> or <a href="categories/">shop by category</a>.</p></noscript>
+  </div>
+</section>
 
-  <svg class="wave" viewBox="0 0 2400 90" preserveAspectRatio="none" aria-hidden="true">
-    <path fill="currentColor" d="M0 45 C200 10 400 80 600 45 S1000 10 1200 45 S1600 80 1800 45 S2200 10 2400 45 V90 H0z"/>
-  </svg>
+<section class="section" aria-labelledby="setup-title">
+  <div class="container">
+    <div class="setup-band reveal">
+      <div class="setup-band__content">
+        <p class="eyebrow">Start with a setup</p>
+        <h2 id="setup-title">Planning a 5‑gallon shrimp tank?</h2>
+        <p>Dwarf shrimp do best with gentle filtration, stable water and a few specific tools. Our buying guide walks through what to buy first and what you can skip.</p>
+        <ul class="checklist">
+          <li>Sponge filter &amp; quiet air pump</li>
+          <li>Fine intake pre-filter sponge</li>
+          <li>Liquid test kit with GH &amp; KH</li>
+          <li>TDS meter for water changes</li>
+          <li>Dimmable LED with a timer</li>
+          <li>Nano siphon for water changes</li>
+        </ul>
+        <div class="setup-band__actions">
+          <a class="btn btn--aqua" href="guides/5-gallon-shrimp-tank-equipment/">Read the buying guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost-light" href="categories/shrimp-tank-essentials/">Shop shrimp essentials</a>
+        </div>
+      </div>
+      <div class="setup-band__media"><img src="assets/images/photos/red-cherry-shrimp-800.webp" srcset="assets/images/photos/red-cherry-shrimp-480.webp 480w, assets/images/photos/red-cherry-shrimp-800.webp 800w, assets/images/photos/red-cherry-shrimp-1200.webp 1200w" sizes="(min-width: 900px) 600px, 100vw" width="2004" height="1334" alt="A bright red cherry shrimp among fine green aquarium plants" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Footer year
-    document.getElementById('yr').textContent = new Date().getFullYear();
+<section class="section section--seafoam" aria-labelledby="why-title">
+  <div class="container values">
+    <figure class="values__media reveal">
+      <img class="img-main" src="assets/images/photos/nature-aquascape-panorama-800.webp" srcset="assets/images/photos/nature-aquascape-panorama-480.webp 480w, assets/images/photos/nature-aquascape-panorama-800.webp 800w, assets/images/photos/nature-aquascape-panorama-1200.webp 1200w, assets/images/photos/nature-aquascape-panorama-1800.webp 1800w" sizes="(min-width: 900px) 560px, 100vw" width="3130" height="1101" alt="A wide nature-style aquascape with driftwood, red and green plants and a bright foreground carpet" loading="lazy" decoding="async">
+      <img class="img-inset" src="assets/images/photos/blue-dream-shrimp-800.webp" srcset="assets/images/photos/blue-dream-shrimp-480.webp 480w, assets/images/photos/blue-dream-shrimp-800.webp 800w" sizes="260px" width="2474" height="1682" alt="Blue dwarf shrimp climbing on a piece of wood" loading="lazy" decoding="async">
+      <figcaption>Photos: Cho jaesun, CC BY-SA 3.0; TonyZimbinski, CC BY-SA 4.0</figcaption>
+    </figure>
+    <div class="reveal">
+      <p class="eyebrow">Why AquaGearZone</p>
+      <h2 id="why-title">Specialist gear, explained clearly</h2>
+      <p class="lead">Small tanks reward good equipment choices. We focus on the nano, shrimp and aquascaping corner of the hobby and present every product the same transparent way.</p>
+      <ul class="value-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 6.3-6.3a4 4 0 0 1-5-5L13 5l1.7 1.3Z" transform="translate(-2 -1)"/><path d="m4 20 5-5"/></svg><h3>Practical equipment advice</h3><p>Recommendations tied to tank size, livestock and maintenance routine — not generic bestseller lists.</p></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 14c0-5 4-9 9-9 3 0 5 2 5 4.5S17 14 14 14H9"/><path d="M9 14c-1.5 2-1 4.5 1 5.5M12 14l-1 3M15 14l-.5 3M5 14l-2 1.5M5 14l-1.5-2.5M14 5 18 2M16 6l4-2"/></svg><h3>Specialized accessories</h3><p>Nano, shrimp and aquascaping gear that general pet stores often overlook.</p></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/><path d="M6 8h1M6 11h1M17 8h1M17 11h1M6 14h1M17 14h1"/></svg><h3>Helpful product comparisons</h3><p>Specifications, suitable setups, pros and limitations laid out consistently for every product.</p></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5M8 7h8M8 11h6"/></svg><h3>Guides for real setups</h3><p>Buying guides built around actual tanks, from a 5-gallon shrimp setup to a planted nano.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    // Generate bubbles (skipped when reduced motion is preferred)
-    (function () {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var wrap = document.querySelector('.bubbles');
-      var count = window.innerWidth < 600 ? 14 : 26;
-      for (var i = 0; i < count; i++) {
-        var b = document.createElement('span');
-        var size = 4 + Math.random() * 16;
-        b.style.width = b.style.height = size + 'px';
-        b.style.left = Math.random() * 100 + '%';
-        b.style.animationDuration = (9 + Math.random() * 12) + 's';
-        b.style.animationDelay = (-Math.random() * 20) + 's';
-        wrap.appendChild(b);
-      }
-    })();
-  </script>
+<section class="section" aria-labelledby="guides-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">Buying guides</p><h2 id="guides-title">Learn before you buy</h2><p>Practical, specific advice for choosing equipment — written for beginners and useful for experienced keepers.</p></div>
+      <a class="link-arrow" href="guides/">All guides</a>
+    </div>
+    <ul class="guide-grid reveal">
+      <li><article class="guide-card"><div class="guide-card__media"><img src="assets/images/photos/red-cherry-shrimp-800.webp" srcset="assets/images/photos/red-cherry-shrimp-480.webp 480w, assets/images/photos/red-cherry-shrimp-800.webp 800w, assets/images/photos/red-cherry-shrimp-1200.webp 1200w" sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" width="2004" height="1334" alt="A bright red cherry shrimp among fine green aquarium plants" loading="lazy" decoding="async"></div><div class="guide-card__body"><div class="guide-card__meta"><span class="pill">Shrimp Keeping</span><span>Buying guide</span><span>12 min read</span></div><h3 class="guide-card__title"><a href="guides/5-gallon-shrimp-tank-equipment/">Essential Equipment for a 5-Gallon Shrimp Tank</a></h3><p class="guide-card__desc">A practical checklist of the filtration, lighting, substrate, testing and maintenance gear a small dwarf shrimp tank actually needs — and what you can skip.</p><span class="link-arrow" aria-hidden="true">Read guide</span></div></article></li>
+      <li><article class="guide-card"><div class="guide-card__media"><img src="assets/images/photos/planting-anubias-tweezers-800.webp" srcset="assets/images/photos/planting-anubias-tweezers-480.webp 480w, assets/images/photos/planting-anubias-tweezers-800.webp 800w, assets/images/photos/planting-anubias-tweezers-1200.webp 1200w" sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" width="3840" height="2551" alt="An aquascaper planting Anubias on driftwood with long tweezers" loading="lazy" decoding="async"></div><div class="guide-card__body"><div class="guide-card__meta"><span class="pill">Aquascaping</span><span>Buying guide</span><span>7 min read</span></div><h3 class="guide-card__title"><a href="guides/choosing-aquascaping-tools/">Choosing Aquascaping Tools for a Planted Aquarium</a></h3><p class="guide-card__desc">Tweezers, scissors and spatulas explained: which shapes and lengths suit your tank, what to buy first, and how to keep stainless tools in good condition.</p><span class="link-arrow" aria-hidden="true">Read guide</span></div></article></li>
+      <li><article class="guide-card"><div class="guide-card__media"><img src="assets/images/photos/crystal-red-shrimp-800.webp" srcset="assets/images/photos/crystal-red-shrimp-480.webp 480w, assets/images/photos/crystal-red-shrimp-800.webp 800w, assets/images/photos/crystal-red-shrimp-1200.webp 1200w" sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" width="3840" height="2160" alt="A red and white crystal red shrimp on dark aquarium soil" loading="lazy" decoding="async"></div><div class="guide-card__body"><div class="guide-card__meta"><span class="pill">Filtration</span><span>How-to</span><span>6 min read</span></div><h3 class="guide-card__title"><a href="guides/shrimp-safe-filter-intake/">How to Make an Aquarium Filter Intake Shrimp-Safe</a></h3><p class="guide-card__desc">Why filter intakes catch baby shrimp, how pre-filter sponges and mesh guards work, and the maintenance that keeps flow steady once they're fitted.</p><span class="link-arrow" aria-hidden="true">Read guide</span></div></article></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight section--white" aria-labelledby="how-title">
+  <div class="container">
+    <div class="section-head reveal"><div><p class="eyebrow">How AquaGearZone works</p><h2 id="how-title">Research here. Buy from retailers you trust.</h2></div></div>
+    <ol class="steps reveal">
+      <li><h3>Discover</h3><p>Browse equipment by category or setup, or search for exactly what you need.</p></li>
+      <li><h3>Compare</h3><p>Check specifications, suitable tank sizes, pros and limitations, and read the related guides.</p></li>
+      <li><h3>Buy at the retailer</h3><p>“View at Retailer” takes you to an established store, where pricing, shipping and checkout are handled.</p></li>
+    </ol>
+    <p class="disclosure-line">AquaGearZone doesn't sell products or take orders. When retailer partnerships are active, some links may earn us a commission at no extra cost to you — they'll always be labeled. <a href="affiliate-disclosure/">Read our affiliate disclosure</a>.</p>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a class="brand" href="./" aria-label="AquaGearZone home"><svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20C7C7"/><stop offset=".55" stop-color="#087F8C"/><stop offset="1" stop-color="#092B3C"/></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lg-f)"/><path d="M20 7.5c-3.6 4.3-7.8 9.6-7.8 14.4a7.8 7.8 0 0 0 15.6 0c0-4.8-4.2-10.1-7.8-14.4Z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/><path d="M14.6 23.4c1.8-1.6 3.6-1.6 5.4 0s3.6 1.6 5.4 0" fill="none" stroke="#A9F0D6" stroke-width="2.2" stroke-linecap="round"/><circle cx="23.2" cy="16.6" r="1.6" fill="#fff"/></svg><span class="brand__name" aria-hidden="true">AquaGear<span>Zone</span></span></a>
+      <p>Aquarium equipment, accessories and practical buying guides for nano tanks, shrimp keeping and aquascaping.</p>
+      <p class="footer-disclosure">AquaGearZone doesn't sell products or process orders. When retailer partnerships are active, some links may earn us a commission at no extra cost to you. <a href="affiliate-disclosure/">Affiliate disclosure</a></p>
+    </div>
+    <div class="footer-col">
+      <h2>Shop</h2>
+      <ul>
+        <li><a href="categories/nano-aquariums/">Nano Aquariums</a></li>
+        <li><a href="categories/shrimp-tank-essentials/">Shrimp Tank Essentials</a></li>
+        <li><a href="categories/aquascaping-tools/">Aquascaping Tools</a></li>
+        <li><a href="categories/filtration-maintenance/">Filtration &amp; Maintenance</a></li>
+        <li><a href="categories/lighting-equipment/">Lighting &amp; Equipment</a></li>
+        <li><a href="products/">All products</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Guides</h2>
+      <ul>
+        <li><a href="guides/5-gallon-shrimp-tank-equipment/">5-Gallon Shrimp Tank Equipment</a></li>
+        <li><a href="guides/choosing-aquascaping-tools/">Choosing Aquascaping Tools</a></li>
+        <li><a href="guides/shrimp-safe-filter-intake/">Shrimp-Safe Filter Intakes</a></li>
+        <li><a href="guides/">All guides</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Company</h2>
+      <ul>
+        <li><a href="about/">About</a></li>
+        <li><a href="contact/">Contact</a></li>
+        <li><a href="affiliate-disclosure/">Affiliate disclosure</a></li>
+        <li><a href="privacy/">Privacy policy</a></li>
+        <li><a href="terms/">Terms of use</a></li>
+        <li><a href="image-credits/">Image credits</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 AquaGearZone.com. All rights reserved.</p>
+    <p class="footer-credit">Website by <a href="https://manicwebmaster.com/" rel="noopener">ManicWebmaster</a></p>
+  </div>
+</footer>
 </body>
 </html>
