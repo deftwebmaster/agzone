@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- * lone wolf, steady course | Matt Livingston -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AquaGearZone — Coming Soon</title>
+  <meta name="description" content="AquaGearZone is under construction. Check back soon.">
+  <!-- Placeholder page: remove noindex at launch -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#04192b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2304192b'/%3E%3Cpath d='M32 12c8 12 14 19 14 27a14 14 0 0 1-28 0c0-8 6-15 14-27z' fill='%2339d0d8'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --deep: #020d18;
+      --mid: #04263f;
+      --shallow: #0a4a6b;
+      --aqua: #39d0d8;
+      --foam: #e6fbff;
+      --muted: #8fb8c9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--foam);
+      background: linear-gradient(180deg, var(--shallow) 0%, var(--mid) 45%, var(--deep) 100%);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Light rays from the surface */
+    .rays {
+      position: absolute;
+      inset: -20% -10% auto;
+      height: 90%;
+      background:
+        repeating-linear-gradient(100deg,
+          transparent 0 60px,
+          rgba(230, 251, 255, 0.05) 60px 90px,
+          transparent 90px 160px);
+      mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+      animation: sway 14s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes sway {
+      from { transform: translateX(-3%) skewX(-2deg); }
+      to   { transform: translateX(3%)  skewX(2deg); }
+    }
+
+    /* Rising bubbles */
+    .bubbles { position: absolute; inset: 0; pointer-events: none; }
+
+    .bubbles span {
+      position: absolute;
+      bottom: -40px;
+      border-radius: 50%;
+      border: 1px solid rgba(230, 251, 255, 0.35);
+      background: radial-gradient(circle at 30% 30%, rgba(230, 251, 255, 0.35), transparent 60%);
+      animation: rise linear infinite;
+    }
+
+    @keyframes rise {
+      0%   { transform: translate(0, 0); opacity: 0; }
+      10%  { opacity: 1; }
+      50%  { transform: translate(12px, -55vh); }
+      100% { transform: translate(-8px, -115vh); opacity: 0; }
+    }
+
+    /* Content */
+    main {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      max-width: 40rem;
+    }
+
+    .mark {
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      color: var(--aqua);
+      filter: drop-shadow(0 0 18px rgba(57, 208, 216, 0.45));
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      border: 1px solid rgba(57, 208, 216, 0.4);
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 4.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+
+    h1 .accent { color: var(--aqua); }
+
+    .lede {
+      margin-top: 1.25rem;
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .contact {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--foam);
+      text-decoration: none;
+      border-bottom: 1px solid var(--aqua);
+      padding-bottom: 1px;
+    }
+
+    .contact a:hover,
+    .contact a:focus-visible { color: var(--aqua); }
+
+    footer {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(143, 184, 201, 0.7);
+    }
+
+    /* Seafloor wave */
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 90px;
+      color: rgba(2, 13, 24, 0.85);
+      animation: drift 18s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes drift {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rays, .wave, .bubbles span { animation: none; }
+      .bubbles { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="rays" aria-hidden="true"></div>
+  <div class="bubbles" aria-hidden="true"></div>
+
+  <main>
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+      <path fill="currentColor" d="M32 6c10 14 18 23 18 33a18 18 0 0 1-36 0c0-10 8-19 18-33z"/>
+      <path fill="#04192b" opacity="0.35" d="M24 40a8 8 0 0 0 8 8v4a12 12 0 0 1-12-12z"/>
+    </svg>
+
+    <span class="eyebrow">Under Construction</span>
+    <h1>Aqua<span class="accent">Gear</span>Zone</h1>
+    <p class="lede">
+      Something new is surfacing. We're building a better place for gear
+      that lives in and around the water — check back soon.
+    </p>
+
+    <!-- Optional: uncomment and set a real address once one exists
+    <p class="contact">
+      Questions in the meantime? <a href="mailto:hello@aquagearzone.com">hello@aquagearzone.com</a>
+    </p>
+    -->
+  </main>
+
+  <footer>&copy; <span id="yr">2026</span> AquaGearZone</footer>
+
+  <svg class="wave" viewBox="0 0 2400 90" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0 45 C200 10 400 80 600 45 S1000 10 1200 45 S1600 80 1800 45 S2200 10 2400 45 V90 H0z"/>
+  </svg>
+
+  <script>
+    // Footer year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Generate bubbles (skipped when reduced motion is preferred)
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var wrap = document.querySelector('.bubbles');
+      var count = window.innerWidth < 600 ? 14 : 26;
+      for (var i = 0; i < count; i++) {
+        var b = document.createElement('span');
+        var size = 4 + Math.random() * 16;
+        b.style.width = b.style.height = size + 'px';
+        b.style.left = Math.random() * 100 + '%';
+        b.style.animationDuration = (9 + Math.random() * 12) + 's';
+        b.style.animationDelay = (-Math.random() * 20) + 's';
+        wrap.appendChild(b);
+      }
+    })();
+  </script>
+</body>
+</html>
