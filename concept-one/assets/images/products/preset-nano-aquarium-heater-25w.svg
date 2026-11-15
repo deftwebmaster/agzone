@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600"><defs>
+<linearGradient id="steel" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#F4F8F9"/><stop offset=".45" stop-color="#C3D0D6"/><stop offset="1" stop-color="#7F95A0"/></linearGradient>
+<linearGradient id="steelV" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#F4F8F9"/><stop offset="1" stop-color="#93A8B1"/></linearGradient>
+<linearGradient id="teal" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#20C7C7"/><stop offset="1" stop-color="#087F8C"/></linearGradient>
+<linearGradient id="navyG" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#145069"/><stop offset="1" stop-color="#092B3C"/></linearGradient>
+<linearGradient id="water" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#BFEDEA" stop-opacity=".75"/><stop offset="1" stop-color="#6CCFCB" stop-opacity=".6"/></linearGradient>
+<linearGradient id="glass" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".85"/><stop offset="1" stop-color="#BDEBE8" stop-opacity=".55"/></linearGradient>
+<linearGradient id="wood" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#B07E55"/><stop offset="1" stop-color="#6E4A2E"/></linearGradient>
+<linearGradient id="foam" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#43545C"/><stop offset=".5" stop-color="#2E3D44"/><stop offset="1" stop-color="#1E2A30"/></linearGradient>
+<linearGradient id="white" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCE8EB"/></linearGradient>
+<linearGradient id="beam" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#E9FFFD" stop-opacity=".9"/><stop offset="1" stop-color="#20C7C7" stop-opacity="0"/></linearGradient>
+<radialGradient id="shadow"><stop offset="0" stop-color="#092B3C" stop-opacity=".22"/><stop offset="1" stop-color="#092B3C" stop-opacity="0"/></radialGradient>
+<radialGradient id="halo"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+</defs><ellipse cx="400" cy="300" rx="330" ry="250" fill="url(#halo)"/><ellipse cx="400" cy="520" rx="220" ry="16" fill="url(#shadow)"/>
+<g transform="rotate(18 400 300)">
+<rect x="360" y="140" width="80" height="360" rx="40" fill="url(#glass)" stroke="#5CC4C1" stroke-width="3"/>
+<rect x="382" y="200" width="36" height="270" rx="18" fill="#E7A86B" opacity=".45"/>
+<path d="M384,214 L416,226" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,238 L416,250" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,262 L416,274" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,286 L416,298" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,310 L416,322" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,334 L416,346" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,358 L416,370" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,382 L416,394" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,406 L416,418" stroke="#C9733A" stroke-width="3" opacity=".7"/><path d="M384,430 L416,442" stroke="#C9733A" stroke-width="3" opacity=".7"/>
+<rect x="352" y="100" width="96" height="70" rx="18" fill="url(#navyG)" stroke="#0E3A4F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="400" cy="134" r="8" fill="#FF9E40"/><circle cx="400" cy="134" r="14" fill="#FF9E40" opacity=".25"/>
+<rect x="370" y="150" width="60" height="6" rx="3" fill="#20C7C7" opacity=".6"/>
+<rect x="436" y="220" width="34" height="20" rx="4" fill="#DCE8EB" stroke="#0E3A4F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="486" cy="230" r="20" fill="url(#glass)" stroke="#5CC4C1" stroke-width="3"/><rect x="436" y="400" width="34" height="20" rx="4" fill="#DCE8EB" stroke="#0E3A4F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="486" cy="410" r="20" fill="url(#glass)" stroke="#5CC4C1" stroke-width="3"/>
+<path d="M400,100 C400,40 330,10 270,30" fill="none" stroke="#0E3A4F" stroke-width="8" stroke-linecap="round"/>
+</g></svg>

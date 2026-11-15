@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-15",
+  "topics": [
+    { "id": "shrimp-keeping", "name": "Shrimp Keeping" },
+    { "id": "aquascaping", "name": "Aquascaping" },
+    { "id": "filtration", "name": "Filtration" }
+  ],
+  "guides": [
+    {
+      "slug": "5-gallon-shrimp-tank-equipment",
+      "title": "Essential Equipment for a 5-Gallon Shrimp Tank",
+      "description": "A practical checklist of the filtration, lighting, substrate, testing and maintenance gear a small dwarf shrimp tank actually needs — and what you can skip.",
+      "topic": "shrimp-keeping",
+      "type": "Buying guide",
+      "photo": "red-cherry-shrimp",
+      "photoAlt": "A bright red cherry shrimp among fine green aquarium plants",
+      "readingMinutes": 12,
+      "published": "2026-11-15",
+      "updated": "2026-11-15",
+      "featured": true,
+      "relatedProducts": ["dual-sponge-filter-small", "fine-pre-filter-sponge-intake-cover", "liquid-freshwater-master-test-kit", "digital-tds-meter"]
+    },
+    {
+      "slug": "choosing-aquascaping-tools",
+      "title": "Choosing Aquascaping Tools for a Planted Aquarium",
+      "description": "Tweezers, scissors and spatulas explained: which shapes and lengths suit your tank, what to buy first, and how to keep stainless tools in good condition.",
+      "topic": "aquascaping",
+      "type": "Buying guide",
+      "photo": "planting-anubias-tweezers",
+      "photoAlt": "An aquascaper planting Anubias on driftwood with long tweezers",
+      "readingMinutes": 7,
+      "published": "2026-11-15",
+      "updated": "2026-11-15",
+      "featured": false,
+      "relatedProducts": ["stainless-steel-aquascaping-tool-set", "long-straight-planting-tweezers-38cm", "curved-spring-scissors-for-carpets"]
+    },
+    {
+      "slug": "shrimp-safe-filter-intake",
+      "title": "How to Make an Aquarium Filter Intake Shrimp-Safe",
+      "description": "Why filter intakes catch baby shrimp, how pre-filter sponges and mesh guards work, and the maintenance that keeps flow steady once they're fitted.",
+      "topic": "filtration",
+      "type": "How-to",
+      "photo": "crystal-red-shrimp",
+      "photoAlt": "A red and white crystal red shrimp on dark aquarium soil",
+      "readingMinutes": 6,
+      "published": "2026-11-15",
+      "updated": "2026-11-15",
+      "featured": false,
+      "relatedProducts": ["fine-pre-filter-sponge-intake-cover", "adjustable-flow-hang-on-back-nano-filter", "dual-sponge-filter-small"]
+    }
+  ]
+}

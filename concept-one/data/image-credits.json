@@ -1,0 +1,261 @@
+{
+  "note": "Photographs sourced from Wikimedia Commons. Keep this file in sync with /image-credits/.",
+  "images": [
+    {
+      "file": "hero-nature-aquascape",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800,
+        2400
+      ],
+      "width": 3840,
+      "height": 2194,
+      "aspect": 1.7502,
+      "source": "https://commons.wikimedia.org/wiki/File:Nature_Aquarium_Aquascape.jpg",
+      "title": "Nature Aquarium Aquascape.jpg",
+      "author": "Dileepkumardr",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "nano-cube-aquarium",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3840,
+      "height": 2571,
+      "aspect": 1.4936,
+      "source": "https://commons.wikimedia.org/wiki/File:Freshwater_nano_aquarium.jpg",
+      "title": "Freshwater nano aquarium.jpg",
+      "author": "Chris Penny",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "file": "cherry-shrimp-carpet",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3840,
+      "height": 2550,
+      "aspect": 1.5059,
+      "source": "https://commons.wikimedia.org/wiki/File:Neocaridina_heteropoda,_Echinodorus_tenellus.jpg",
+      "title": "Neocaridina heteropoda, Echinodorus tenellus.jpg",
+      "author": "Uccio D'Agostino",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
+      "file": "nano-aquascape-led",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3840,
+      "height": 2160,
+      "aspect": 1.7778,
+      "source": "https://commons.wikimedia.org/wiki/File:Aquascape_mini.jpg",
+      "title": "Aquascape mini.jpg",
+      "author": "Trstcantik",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "planted-tank-lily-pipes",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 2048,
+      "height": 1536,
+      "aspect": 1.3333,
+      "source": "https://commons.wikimedia.org/wiki/File:Aquascape_im_Triangel_Design.jpg",
+      "title": "Aquascape im Triangel Design.jpg",
+      "author": "Brudinho5",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "planted-tank-led-pendants",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3192,
+      "height": 1920,
+      "aspect": 1.6625,
+      "source": "https://commons.wikimedia.org/wiki/File:Acuario_iluminado_con_l%C3%A1mparas_led.jpg",
+      "title": "Acuario iluminado con lámparas led.jpg",
+      "author": "Gustavo Sivila",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "red-cherry-shrimp",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 2004,
+      "height": 1334,
+      "aspect": 1.5022,
+      "source": "https://commons.wikimedia.org/wiki/File:Red_Cherry_Shrimp_2.jpg",
+      "title": "Red Cherry Shrimp 2.jpg",
+      "author": "Corydoras-adolfoi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "planting-anubias-tweezers",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3840,
+      "height": 2551,
+      "aspect": 1.5053,
+      "source": "https://commons.wikimedia.org/wiki/File:An_Aquascapist_Planting_Aquatic_Plant_Anubias_Petite_with_Tweezers_in_an_Aquarium.jpg",
+      "title": "An Aquascapist Planting Aquatic Plant Anubias Petite with Tweezers in an Aquarium.jpg",
+      "author": "Abhik.Mazumdar.73",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
+      "file": "crystal-red-shrimp",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3840,
+      "height": 2160,
+      "aspect": 1.7778,
+      "source": "https://commons.wikimedia.org/wiki/File:Caridina_cf._cantonensis_(crysta_red_shrimp).JPG",
+      "title": "Caridina cf. cantonensis (crysta red shrimp).JPG",
+      "author": "Bahersayana",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "file": "nature-aquascape-panorama",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3130,
+      "height": 1101,
+      "aspect": 2.8429,
+      "source": "https://commons.wikimedia.org/wiki/File:Cho_Jaesun_2020_AGA_Top_10.jpg",
+      "title": "Cho Jaesun 2020 AGA Top 10.jpg",
+      "author": "Cho jaesun",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "file": "nano-tank-boraras",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3840,
+      "height": 2892,
+      "aspect": 1.3278,
+      "source": "https://commons.wikimedia.org/wiki/File:Nano-Aquarium_mit_Boraras_brigittae.JPG",
+      "title": "Nano-Aquarium mit Boraras brigittae.JPG",
+      "author": "VivienneHarper",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "file": "blue-dream-shrimp",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 2474,
+      "height": 1682,
+      "aspect": 1.4709,
+      "source": "https://commons.wikimedia.org/wiki/File:Blue_N._Davidi_Shrimps.jpg",
+      "title": "Blue N. Davidi Shrimps.jpg",
+      "author": "TonyZimbinski",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "planted-nano-driftwood",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3264,
+      "height": 2448,
+      "aspect": 1.3333,
+      "source": "https://commons.wikimedia.org/wiki/File:Planted_Nano_Aquarium.JPG",
+      "title": "Planted Nano Aquarium.JPG",
+      "author": "Tdwittt",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "nano-tank-moss-filter",
+      "widths": [
+        480,
+        800,
+        1200,
+        1800
+      ],
+      "width": 3264,
+      "height": 2448,
+      "aspect": 1.3333,
+      "source": "https://commons.wikimedia.org/wiki/File:12-Liter-Aquarium.jpg",
+      "title": "12-Liter-Aquarium.jpg",
+      "author": "VivienneHarper",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "file": "iwagumi-stone-layout",
+      "widths": [
+        480,
+        800,
+        1200,
+        1452
+      ],
+      "width": 1452,
+      "height": 962,
+      "aspect": 1.5094,
+      "source": "https://commons.wikimedia.org/wiki/File:Iwagumi_Scape.jpg",
+      "title": "Iwagumi Scape.jpg",
+      "author": "Moritz Holzinger",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    }
+  ]
+}

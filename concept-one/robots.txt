@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /retailer-preview/
+
+Sitemap: https://aquagearzone.com/sitemap.xml
